@@ -97,8 +97,10 @@ jobs:
     - name: Build the Docker image for Fastapi app
       env:
         DOCKER_USER: ${{ secrets.DOCKER_USER_NAME }}
-      run: docker build . -f Dockerfile -t $DOCKER_USER/titanic-fastapi:latest
-
+      run: |
+        cd GitHubActions_to_train_test_build_and_push
+        docker build . -f Dockerfile -t $DOCKER_USER/titanic-fastapi:latest
+        
     - name: Push the Docker Image
       env:
         DOCKER_USER: ${{ secrets.DOCKER_USER_NAME }}
