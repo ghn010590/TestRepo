@@ -17,7 +17,7 @@ jobs:
       with:
         python-version: '3.10'
     - name: Install dependencies
-      run: pip install -r requirements/requirements.txt
+      run: pip install -r GitHubActions_to_train_test_build_and_push/requirements/requirements.txt
     - name: Train and save pipeline
       run: python titanic_model/train_pipeline.py
     - uses: actions/upload-artifact@v2
